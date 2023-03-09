@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  api:
+    build:
+      args:
+        SRC_DIR: ./api
+      context: .
+      dockerfile: ./docker/api/Dockerfile
+    image: node_api
+    ports:
+      - 80:3000
+    volumes:
+      - ./api:/app
